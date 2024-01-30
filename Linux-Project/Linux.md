@@ -1,8 +1,6 @@
-# Introduction to Linux
+# Basic Commands in Linux
 
-## Basic Commands in Linux
-
-### `sudo` command
+## `sudo` command
 
 **sudo** which is short for **superuser do** is a command that lets you perform tasks that require administrative permissions.
 
@@ -11,7 +9,7 @@ For example **sudo apt upgrade** is used to install and download all the latest 
 ![sudo apt upgrade](<Images/sudo apt upgrade.png>)
 
 
-### `pwd` command
+## `pwd` command
 
 **pwd** stands for **print working directory**
 
@@ -20,7 +18,7 @@ It writes to standard output the full path name of your current directory.
 ![pwd](Images/pwd.png)
 
 
-### `cd` command
+## `cd` command
 
 **cd** stands for **change directory** and is used to change the current working directory.
 
@@ -29,7 +27,7 @@ It writes to standard output the full path name of your current directory.
 ![cd](Images/cd.png)
 
 
-### `ls` command
+## `ls` command
 
 **ls** lists directory contents of files and directories. 
 
@@ -40,111 +38,111 @@ It writes to standard output the full path name of your current directory.
 ![ls -S](<Images/ls -S.png>)
 
 
-### `cat` command
+## `cat` command
 
 **cat** 
 
 
-### `cp` command
+## `cp` command
 
 
-### `mv` command
+## `mv` command
 
 
-### `mkdir` command
+## `mkdir` command
 
 
-### `rmdir` command
+## `rmdir` command
 
 
-### `rm` command
+## `rm` command
 
 
-### `touch` command
+## `touch` command
 
 
-### `locate` command
+## `locate` command
 
 
-### `find` command
+## `find` command
 
 
-### `grep` command
+## `grep` command
 
 
-### `df` command
+## `df` command
 
 
-### `du` command
+## `du` command
 
 
-### `head` command
+## `head` command
 
 
-### `tail` command
+## `tail` command
 
 
-### `diff` command
+## `diff` command
 
 
-### `tar` command
+## `tar` command
 
 
-### `chmod` command
+## `chmod` command
 
 
-### `chown` command
+## `chown` command
 
 
-### `jobs` command
+## `jobs` command
 
 
-### `kill` command
+## `kill` command
 
 
-### `ping` command
+## `ping` command
 
 
-### `wget` command
+## `wget` command
 
 
-### `uname` command
+## `uname` command
 
 
-### `top` command
+## `top` command
 
 
-### `history` command
+## `history` command
 
 
-### `man` command
+## `man` command
 
 
-### `echo` command
+## `echo` command
 
 
-### `zip, unzip` commands
+## `zip, unzip` commands
 
 
-### `hostname` command
+## `hostname` command
 
 
-### `useradd, userdel` commands
+## `useradd, userdel` commands
 
 
-### `apt get` command
+## `apt get` command
 
 
-### `nano, vi, jed` commands
+## `nano, vi, jed` commands
 
 
-### `alias, unalias` commands
+## `alias, unalias` commands
 
 
-### `su` command
+## `su` command
 
 
-### `htop` command
+## `htop` command
 
 
-### `ps`command
+## `ps`command
