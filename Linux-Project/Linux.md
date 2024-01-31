@@ -40,7 +40,9 @@ It writes to standard output the full path name of your current directory.
 
 ## `cat` command
 
-**cat** 
+**cat** is short for **Concatenate** and is used to list, combine and write file content to the standard output.
+
+![cat](Images/cat.png)
 
 
 ## `cp` command
