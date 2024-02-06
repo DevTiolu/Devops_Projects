@@ -69,66 +69,77 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ### `mv` command
 
+**mv** can be used to **move** a file or directory to a new location. It can also be used to **rename** a file or directory.
+
+![mv](Images/mv.png)
 
 
-## `mkdir` command
+### `mkdir` command
+
+**mkdir** stands for **make directory** and is used to create a new directory.
+
+![mkdir](Images/mkdir.png)
 
 
-## `rmdir` command
+### `rmdir` command
+
+**rmdir** stands for **remove directory** and is used to delete an empty directory.
+
+![rmdir](Images/rmdir.png)
 
 
-## `rm` command
+### `rm` command
 
 
-## `touch` command
+### `touch` command
 
 
-## `locate` command
+### `locate` command
 
 
-## `find` command
+### `find` command
 
 
-## `grep` command
+### `grep` command
 
 
-## `df` command
+### `df` command
 
 
-## `du` command
+### `du` command
 
 
-## `head` command
+### `head` command
 
 
-## `tail` command
+### `tail` command
 
 
-## `diff` command
+### `diff` command
 
 
-## `tar` command
+### `tar` command
 
 
-## `chmod` command
+### `chmod` command
 
 
-## `chown` command
+### `chown` command
 
 
-## `jobs` command
+### `jobs` command
 
 
-## `kill` command
+### `kill` command
 
 
-## `ping` command
+### `ping` command
 
 
-## `wget` command
+### `wget` command
 
 
-## `uname` command
+### `uname` command
 
 
 ## `top` command
