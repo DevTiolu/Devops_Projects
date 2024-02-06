@@ -1,16 +1,16 @@
 # What is Linux?
 
-**Linux** is the best-known and most-used open source operating system. Popular distributions include Ubuntu, Fedora, Debian, openSUSE, and Red Hat.
+**Linux** is the best-known and most-used open source operating system. Popular distributions include **Ubuntu**, **Fedora**, **CentOS**, **openSUSE**, and **Red Hat**.
 
 Most Linux distributions use **graphical user interface (GUI)**, making them beginner-friendly. However, it is recommended to use the **command line interface (CLI)** because it's quicker and offers more control.
 
-# Basic Commands in Linux
+## Basic Commands in Linux
 
 **Linux commands** are a type of Unix command or shell procedure. They run on the **command line interface (CLI)** and interact with your system via texts and processes.
 
 Linux commands are used to perform a variety of tasks, including displaying information about files and directories.
 
-## `sudo` command
+### `sudo` command
 
 **sudo** which is short for **superuser do** is a command that lets you perform tasks that require administrative permissions.
 
@@ -18,7 +18,7 @@ For example **sudo apt upgrade** is used to install and download all the latest 
 
 ![sudo apt upgrade](<Images/sudo apt upgrade.png>)
 
-## `pwd` command
+### `pwd` command
 
 **pwd** stands for **print working directory**
 
@@ -27,7 +27,7 @@ It writes to standard output the full path name of your current directory.
 ![pwd](Images/pwd.png)
 
 
-## `cd` command
+### `cd` command
 
 **cd** stands for **change directory** and is used to change the current working directory.
 
@@ -35,7 +35,7 @@ It writes to standard output the full path name of your current directory.
 
 ![cd](Images/cd.png)
 
-## `ls` command
+### `ls` command
 
 **ls** lists directory contents of files and directories. 
 
@@ -46,17 +46,29 @@ It writes to standard output the full path name of your current directory.
 ![ls -S](<Images/ls -S.png>)
 
 
-## `cat` command
+### `cat` command
 
 **cat** is short for **Concatenate** and is used to list, combine and write file content to the standard output.
 
 ![cat](Images/cat.png)
 
 
-## `cp` command
+### `cp` command
 
+**cp** means **copy** and is used to copy a file to a specified location.
 
-## `mv` command
+![cp](Images/cp.png)
+
+To copy more than one file, enter the file names followed by the destination directory.
+
+![cp 2](<Images/cp 2.png>)
+
+To copy an entire directory, pass the -R flag before typing the source directory followed by the destination directory.
+
+![cp - R](<Images/cp - R.png>)
+
+### `mv` command
+
 
 
 ## `mkdir` command
