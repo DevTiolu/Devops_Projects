@@ -1,5 +1,7 @@
 # Basic Commands in Linux
 
+Linux is the best-known and most-used open source operating system.
+
 ## `sudo` command
 
 **sudo** which is short for **superuser do** is a command that lets you perform tasks that require administrative permissions.
@@ -7,7 +9,6 @@
 For example **sudo apt upgrade** is used to install and download all the latest package information available for the packages currently installed on the system.
 
 ![sudo apt upgrade](<Images/sudo apt upgrade.png>)
-
 
 ## `pwd` command
 
@@ -25,7 +26,6 @@ It writes to standard output the full path name of your current directory.
 **cd ..** moves one directory up
 
 ![cd](Images/cd.png)
-
 
 ## `ls` command
 
@@ -148,3 +148,4 @@ It writes to standard output the full path name of your current directory.
 
 
 ## `ps`command
+
