@@ -1,6 +1,14 @@
+# What is Linux?
+
+**Linux** is the best-known and most-used open source operating system. Popular distributions include Ubuntu, Fedora, Debian, openSUSE, and Red Hat.
+
+Most Linux distributions use **graphical user interface (GUI)**, making them beginner-friendly. However, it is recommended to use the **command line interface (CLI)** because it's quicker and offers more control.
+
 # Basic Commands in Linux
 
-Linux is the best-known and most-used open source operating system.
+**Linux commands** are a type of Unix command or shell procedure. They run on the **command line interface (CLI)** and interact with your system via texts and processes.
+
+Linux commands are used to perform a variety of tasks, including displaying information about files and directories.
 
 ## `sudo` command
 
