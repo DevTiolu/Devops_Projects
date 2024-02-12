@@ -90,93 +90,151 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ### `rm` command
 
+**rm** stands for **remove** is used to delete files within a directory.
+
+![rm](Images/rm.png)
+
 
 ### `touch` command
+
+**touch** is used to create a new empty file.
+
+![touch](Images/touch.png)
 
 
 ### `locate` command
 
+**locate** is used to find a file in the database.
+
+
 
 ### `find` command
+
+**find** is used to search for files within a specific directory and perform subsequent operations.
+
+![find](Images/find.png)
 
 
 ### `grep` command
 
+**grep** stands for **global regular expression print** and lets you find a word by searching through all the texts in a specific file.
+
 
 ### `df` command
 
+The **df** command is used to report the system's disk space usage shown in percentage and kilobyte (KB). 
+
+![df](Images/df.png)
+
+**df -m** 
+
+![df_2](<Images/df 2.png>)
 
 ### `du` command
 
+**du** is used to check how much space a file or directory takes up.
+
+![du](Images/du.png)
 
 ### `head` command
 
+**head** displays the first ten lines of a text. 
 
 ### `tail` command
+
+**tail** displays the last ten lines of a text. It is used to check if a file has new data or to view error messages.
 
 
 ### `diff` command
 
+**diff** stands for **difference** and it compares the contents of two files. It then returns the parts that do not match. 
+
+diff [option] file1 file2
+
 
 ### `tar` command
+
+**tar** archives multiple files into a TAR file.
+
+tar [options] [archive_file] [file or directory to be archived]
 
 
 ### `chmod` command
 
+**chmod** 
 
 ### `chown` command
 
+**chown**
 
 ### `jobs` command
 
+**jobs**
 
 ### `kill` command
 
+**kill**
 
 ### `ping` command
 
+**ping**
 
 ### `wget` command
 
+**wget**
 
 ### `uname` command
 
+**uname**
 
 ## `top` command
 
+**top**
 
 ## `history` command
 
+**history**
 
 ## `man` command
 
+**man**
 
 ## `echo` command
 
+**echo**
 
 ## `zip, unzip` commands
 
+**zip**
 
 ## `hostname` command
 
+**hostname**
 
 ## `useradd, userdel` commands
 
+**useradd**
 
 ## `apt get` command
 
+**apt_get**
 
 ## `nano, vi, jed` commands
 
+**nano**
 
 ## `alias, unalias` commands
 
+**alias**
 
 ## `su` command
 
+**su**
 
 ## `htop` command
 
+**htop**
 
 ## `ps`command
 
+**ps**
