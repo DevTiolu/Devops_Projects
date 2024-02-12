@@ -187,54 +187,54 @@ tar [options] [archive_file] [file or directory to be archived]
 
 **uname**
 
-## `top` command
+### `top` command
 
 **top**
 
-## `history` command
+### `history` command
 
 **history**
 
-## `man` command
+### `man` command
 
 **man**
 
-## `echo` command
+### `echo` command
 
 **echo**
 
-## `zip, unzip` commands
+### `zip, unzip` commands
 
 **zip**
 
-## `hostname` command
+### `hostname` command
 
 **hostname**
 
-## `useradd, userdel` commands
+### `useradd, userdel` commands
 
 **useradd**
 
-## `apt get` command
+### `apt get` command
 
 **apt_get**
 
-## `nano, vi, jed` commands
+### `nano, vi, jed` commands
 
 **nano**
 
-## `alias, unalias` commands
+### `alias, unalias` commands
 
 **alias**
 
-## `su` command
+### `su` command
 
 **su**
 
-## `htop` command
+### `htop` command
 
 **htop**
 
-## `ps`command
+### `ps`command
 
 **ps**
