@@ -26,12 +26,11 @@ It writes to standard output the full path name of your current directory.
 
 ![pwd](Images/pwd.png)
 
-
 ### `cd` command
 
 **cd** stands for **change directory** and is used to change the current working directory.
 
-**cd ..** moves one directory up
+**cd ..** moves one directory up.
 
 ![cd](Images/cd.png)
 
@@ -45,13 +44,11 @@ It writes to standard output the full path name of your current directory.
 
 ![ls -S](<Images/ls -S.png>)
 
-
 ### `cat` command
 
 **cat** is short for **Concatenate** and is used to list, combine and write file content to the standard output.
 
 ![cat](Images/cat.png)
-
 
 ### `cp` command
 
@@ -73,13 +70,11 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ![mv](Images/mv.png)
 
-
 ### `mkdir` command
 
 **mkdir** stands for **make directory** and is used to create a new directory.
 
 ![mkdir](Images/mkdir.png)
-
 
 ### `rmdir` command
 
@@ -87,13 +82,11 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ![rmdir](Images/rmdir.png)
 
-
 ### `rm` command
 
 **rm** stands for **remove** is used to delete files within a directory.
 
 ![rm](Images/rm.png)
-
 
 ### `touch` command
 
@@ -101,11 +94,9 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ![touch](Images/touch.png)
 
-
 ### `locate` command
 
 **locate** is used to find a file in the database.
-
 
 
 ### `find` command
@@ -114,11 +105,9 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 ![find](Images/find.png)
 
-
 ### `grep` command
 
 **grep** stands for **global regular expression print** and lets you find a word by searching through all the texts in a specific file.
-
 
 ### `df` command
 
@@ -126,7 +115,7 @@ The **df** command is used to report the system's disk space usage shown in perc
 
 ![df](Images/df.png)
 
-**df -m** 
+**df -m**  displays the file system usage in MBs while **df -k** displays it in KBs.
 
 ![df_2](<Images/df 2.png>)
 
@@ -161,80 +150,132 @@ tar [options] [archive_file] [file or directory to be archived]
 
 ### `chmod` command
 
-**chmod** 
+**chmod** is used to modify file permissions to control who can read, write, or execute a file. 
 
 ### `chown` command
 
-**chown**
+**chown** is used to change ownership of a file, directory or symbolic limk to a specific username.
 
 ### `jobs` command
 
-**jobs**
+**jobs** displays all running processes and their statuses.
 
 ### `kill` command
 
-**kill**
+**kill** is used to terminate an unresponsive program manually.
+
+
 
 ### `ping` command
 
-**ping**
+**ping** is used to check whether a network or server is reachable.
+
+It is also used to troubleshoot various connectivity issues.
+
+![ping](Images/ping.png)
 
 ### `wget` command
 
-**wget**
+**wget** lets you download files from the internet without hindering othr running processes.
+
+![wget](Images/wget.png)
 
 ### `uname` command
 
-**uname**
+**uname** prints detailed information about your linux system and hardware.
+
+![uname](Images/uname.png)
 
 ### `top` command
 
-**top**
+**top** displays all the running processes and a dynamic real-time view of the current system.
+
+![top](Images/top.png)
 
 ### `history` command
 
-**history**
+**history** lists up to 500 previously executed commands, allowing you to reuse them without re-entering. 
+
+![history](Images/history.png)
 
 ### `man` command
 
-**man**
+**man** provides a user manual of any commands and utilities you can run in the Terminal including the name, descrption, and options
+
+![man](Images/man.png)
 
 ### `echo` command
 
-**echo**
+**echo** displays a line of text or string using the standard output.
+
+![echo](Images/echo.png)
 
 ### `zip, unzip` commands
 
-**zip**
+**zip** is used to compress your files into a zip file .
+
+It is also useful for archiving files and directories hereby reducing disk usage.
+
+![zip](Images/zip.png)
+
+**unzip** is used to extract zipped files from an archive.
+
+![unzip](Images/unzip.png)
 
 ### `hostname` command
 
-**hostname**
+**hostname** returns the system's hostname.
+
+![hostname](Images/hostname.png)
 
 ### `useradd, userdel` commands
 
-**useradd**
+**useradd** is used to create a new user account.
+
+![useradd](Images/useradd.png)
+
+**userdel** is used to delete a user account.
+
+![userdel](Images/userdel.png)
 
 ### `apt get` command
 
-**apt_get**
+**apt_get** is a command line tool for handling **Advanced Package Tool (APT)** libraries in Linux.
+
+It lets you retrieve information from authenticated sources to manage, update, remove, and install software and its dependencies.
+
+![apt_get](<Images/apt get.png>)
 
 ### `nano, vi, jed` commands
 
-**nano**
+**Linux** lets users edit and manage files via a text editor, such as **nano**, **vi**, and **jed**.
+
+![nano.1](Images/nano.1.png)
+
+![nano.2](Images/nano.2.png)
 
 ### `alias, unalias` commands
 
-**alias**
+**alias** allows you to create a shortcut with the same functionality as a command, file name or text.
+
+**unalias** deletes an existing alias.
+
+![alias, unalias](<Images/alias, unalias.png>)
 
 ### `su` command
 
-**su**
+**su** stands for **switch user** and allows you run a program as a different user.
+
+![su](Images/su.png)
 
 ### `htop` command
 
-**htop**
+**htop** monitors system resources and server processes in real time.
+
+![htop](Images/htop.png)
 
 ### `ps`command
 
-**ps**
+**ps** stands for **process status** and lists all currently running processes.
+
+![ps](Images/ps.png)
