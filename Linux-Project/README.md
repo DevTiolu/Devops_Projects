@@ -98,6 +98,7 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 **locate** is used to find a file in the database.
 
+![locate](Images/locate.png)
 
 ### `find` command
 
@@ -108,6 +109,8 @@ To copy an entire directory, pass the -R flag before typing the source directory
 ### `grep` command
 
 **grep** stands for **global regular expression print** and lets you find a word by searching through all the texts in a specific file.
+
+![grep](Images/grep.png)
 
 ### `df` command
 
@@ -129,17 +132,19 @@ The **df** command is used to report the system's disk space usage shown in perc
 
 **head** displays the first ten lines of a text. 
 
+![head](Images/head.png)
+
 ### `tail` command
 
 **tail** displays the last ten lines of a text. It is used to check if a file has new data or to view error messages.
 
+![tail](<Images/tail .png>)
 
 ### `diff` command
 
 **diff** stands for **difference** and it compares the contents of two files. It then returns the parts that do not match. 
 
-diff [option] file1 file2
-
+![diff](Images/diff.png)
 
 ### `tar` command
 
@@ -147,24 +152,31 @@ diff [option] file1 file2
 
 tar [options] [archive_file] [file or directory to be archived]
 
+![tar](Images/tar.png)
 
 ### `chmod` command
 
 **chmod** is used to modify file permissions to control who can read, write, or execute a file. 
 
+![chmod](Images/chmod.png)
+
 ### `chown` command
 
 **chown** is used to change ownership of a file, directory or symbolic limk to a specific username.
+
+![chown](Images/chown.png)
 
 ### `jobs` command
 
 **jobs** displays all running processes and their statuses.
 
+![jobs](Images/jobs.png)
+
 ### `kill` command
 
 **kill** is used to terminate an unresponsive program manually.
 
-
+![kill](Images/kill.png)
 
 ### `ping` command
 
