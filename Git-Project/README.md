@@ -62,9 +62,79 @@ Branches are used to develop new features, resolve bugs, and to test multiple ve
 
 ![deleting a branch](<Images/7-deleting a branch.png>)
 
+
  > [!NOTE]
 > To learn more about git, type `git branch --help` on your command line.
 
+
+## Github 
+
+Github is a web-based platform where repositories are hosted. It allows remote teams to view and make changes to the same repositories.
+
+Add a remote repository to the local repository using the following command `git remote add origin <link to your github repo>`
+
+![push local repo](<Images/8-pushing an existing repo to git.png>)
+
+Git clone allows us make a copy of a remote repository on our local machine. 
+
+A remote repo can be cloned using `git clone <link to your remote repository>`
+
+![clone repo](<Images/9-cloning remote repo to a local repository.png>)
+
+
+## Markdown Syntax
+
+Markdown Syntax is a light markup language used for formatting plain text.
+
++ Headings : To create headings, use the hash symbol with the number of hashes indicating the level of the heading.
+
+```
+# Heading 1
+## Heading 2
+### Heading 3
+```
+![headings](Images/11-headings.png)
+
++ Emphasis : Asterisks or underscores are used to emphasize texts.
+
+```
+*italic* or _italic_
+**bold** or __bold__
+```
+
+![emphasis](<Images/13-emphasize text.png>)
+
++ Lists : ordered and unordered lists
+
+```
+- Item 1
+- Item 2
+- Item 3
+```
+
+```
+1. First item
+2. Second item
+3. Third item
+```
+
+![lists](<Images/15-ordered & unordered lists.png>)
+
++ Hyperlinks : To create a hyperlink, put text in square brackets followed by the url in parenthesis. 
+
+`[visit darey.io](https://www.darey.io)`
+
+
++ Images : To display an image, use an exclamation mark, followed by square brackets for the text and parenthesis containing the image url.
+
+`![Alt Text](https://example.com/image.jpg)`
+
+
++ Code : Use backticks to display code. 
+
+`console.log('Welcome to darey.io')`
+
+![alt text](<Images/17-hyperlinks and images.png>)
 
 
 
