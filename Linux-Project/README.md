@@ -1,6 +1,6 @@
 # What is Linux?
 
-**Linux** is the best-known and most-used open-source operating system. Popular distributions include **Ubuntu**, **Fedora**, **CentOS**, **openSUSE**, and **Red Hat**.
+**Linux** is the best-known and most-used open source operating system. Popular distributions include **Ubuntu**, **Fedora**, **CentOS**, **openSUSE**, and **Red Hat**.
 
 Most Linux distributions use **graphical user interface (GUI)**, making them beginner-friendly. However, it is recommended to use the **command line interface (CLI)** because it's quicker and offers more control.
 
