@@ -1,5 +1,5 @@
 # LAMP STACK IMPLEMENTATION
-### (Linux, Apache, MySQL, and PHP)
+Linux, Apache, MySQL, and PHP
 
 ## INSTALLING APACHE WEB SERVER
 
