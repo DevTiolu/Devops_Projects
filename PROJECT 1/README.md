@@ -1,0 +1,2 @@
+# LAMP STACK IMPLEMENTATION
+## (Linux, Apache, MySQL and PHP)
