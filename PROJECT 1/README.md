@@ -1,7 +1,7 @@
-# LAMP STACK IMPLEMENTATION
+## LAMP STACK IMPLEMENTATION
 Linux, Apache, MySQL, and PHP
 
-## INSTALLING APACHE WEB SERVER
+### INSTALLING APACHE WEB SERVER
 
 Install Apache using Ubuntu’s package manager
 apt
