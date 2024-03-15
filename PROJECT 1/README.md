@@ -72,3 +72,78 @@
 
 ## Installing PHP
 
+In addition to the **php** package, you’ll need **php-mysql**, a PHP module that allows PHP to communicate with MySQL-based databases. You’ll also need **libapache2-mod-php** to enable Apache to handle PHP files.
+
+- To install the 3 packages, run `sudo apt install php libapache2-mod-php php-mysql`
+
+![php](<Images/install php.png>)
+
+- To confirm php version, run `php -v`
+
+![php -v](<Images/php -v.png>)
+
+## Enable PHP on the website
+
+- Create the directory `newproject` using `mkdir`
+
+`sudo mkdir /var/www/newproject`
+
+![mkdir](Images/mkdir.png)
+
+- Assign ownership of the directory with your current system user.
+
+`sudo chown -R $USER:$USER /var/www/newproject`
+
+![assign user](<Images/assign user.png>)
+
+- Create and open a new configuration file in Apache's `sites-available` directory using **vi**
+
+`sudo vi /etc/apache2/sites-available/newproject.conf`
+
+![vi](Images/vi.png)
+
+- Hit i on the keyboard to enter editing mode and paste the following text;
+
+
+<VirtualHost *:80>
+    ServerName newproject
+    ServerAlias www.newproject 
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/newproject
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+![vi editing](<Images/vi insert.png>)
+
+- You can use **ls** to show the new file in `sites-available`
+
+`sudo ls /etc/apache2/sites-available`
+
+![ls](<Images/ls .png>)
+
+- Use a2ensite command to enable the new virtual host.
+
+`sudo a2ensite newproject`
+
+- To disable Apache’s default website use a2dissite command
+
+`sudo a2dissite 000-default`
+
+- To make sure your configuration file doesn’t contain syntax errors, run:
+
+`sudo apache2ctl configtest`
+
+- Reload Apache so the changes take effect.
+
+`sudo systemctl reload apache2`
+
+![apache config](<Images/apache config.png>)
+
+- Create an index.html file to test that the virtual host works as expected.
+
+sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/newproject/index.html
+
+
+
+
