@@ -82,7 +82,7 @@ In addition to the **php** package, you’ll need **php-mysql**, a PHP module th
 
 ![php -v](<Images/php -v.png>)
 
-## Enable PHP on the website
+## Creating a Virtual Host for your website using Apache
 
 - Create the directory `newproject` using `mkdir`
 
@@ -104,7 +104,7 @@ In addition to the **php** package, you’ll need **php-mysql**, a PHP module th
 
 - Hit i on the keyboard to enter editing mode and paste the following text;
 
-
+```
 <VirtualHost *:80>
     ServerName newproject
     ServerAlias www.newproject 
@@ -113,6 +113,7 @@ In addition to the **php** package, you’ll need **php-mysql**, a PHP module th
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+```
 
 ![vi editing](<Images/vi insert.png>)
 
@@ -142,8 +143,50 @@ In addition to the **php** package, you’ll need **php-mysql**, a PHP module th
 
 - Create an index.html file to test that the virtual host works as expected.
 
+```
 sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/newproject/index.html
+```
 
+- Go to your browser, and try to open wenbsite url using the IP address.
 
+`http://<Public-IP-Address>:80`
 
+## Enable PHP on the website
+With the default **DirectoryIndex** settings on Apache, a file named **index.html** will always take precedence over an **index.php file**.
+
+To change this behavior, you need to edit the **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the **index.php** file is listed within the **DirectoryIndex** directive.
+
+`sudo vim /etc/apache2/mods-enabled/dir.conf`
+
+![enable php](<Images/enable php.png>)
+
+```
+<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+
+- After saving and closing the file, reload apache so the changes take effect.
+
+`sudo systemctl reload apache2`
+
+![enable php 2](<Images/enable php2.png>)
+
+- Create a **PHP script** to test that **PHP** is correctly installed and configured on the server. Create a new file called **index.php**.
+
+`vim /var/www/newproject/index.php`
+
+![new project](<Images/new project.png>)
+
+- Add the following text;
+
+```
+<?php
+phpinfo();
+```
+
+- Save and close the file and refresh the page.
 
