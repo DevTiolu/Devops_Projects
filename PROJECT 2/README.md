@@ -176,8 +176,98 @@ sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/met
 
 ![hello LEMP from hostname](<Images/hello LEMP.png>)
 
+Your LEMP stack is now fully configured.
 
+## Testing PHP with Nginx
 
+- Create a test PHP file, **info.php** in your document root.
+
+`nano /var/www/projectLEMP/info.php`
+
+![info.php](Images/info.php.png)
+
+- Paste the following lines into the new file.
+```
+<?php
+phpinfo();
+```
+![nano](<Images/nano editor.png>)
+
+- You can access this page in your web browser by visiting the public IP address you set followed by `info.php`.
+
+`http://`server_domain_or_IP`/info.php`
+
+![bad gateway](<Images/bad gateway.png>)
+
+## Retriving Data from MySQL Database with PHP 
+
+You will create a **test database (DB)** with simple **"To do list"** and configure access to it, so the Nginx website would be able to query data from the **DB** and display it.
+
+- Connect to the MySQL console using the root account, `sudo mysql`
+
+- Run the following command from your MySQL console
+
+`mysql> CREATE DATABASE example_database` 
+
+- Create a new user and grant him full privileges on the database you have just created.
+
+```
+mysql> CREATE USER 'first_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'
+``` 
+
+Note: Replace 'passWord.1' with your preferred 'string'
+
+- Give the user permission over the first_database database.
+
+`mysql> GRANT ALL ON first_database.* TO 'first_user'@'%'`
+
+- Then exit the MySQL shell by running `mysql> exit`
+
+- Create a test table named **todo_list**. From the MySQL console, run the following statement
+
+`CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));`
+
+- Insert a few rows of content using the following command.
+
+`mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
+
+- To confirm that the data was successfully saved to your table, run
+
+`mysql>  SELECT * FROM example_database.todo_list;`
+
+- After confirming that you have valid data in the table, exit MySQL
+
+`mysql> exit`
+
+- Now  create a PHP script that will connect to MySQL and query for your content.
+
+`nano /var/www/projectLEMP/todo_list.php`
+
+- Copy this content into your todo_list.php script:
+
+```
+<?php
+$user = "example_user";
+$password = "PassWord.1";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+```
+
+- Save and close the file and access it via your browser.
+
+`http://<Public_domain_or_IP>/todo_list.php`
 
 
 
