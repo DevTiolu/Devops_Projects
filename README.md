@@ -5,3 +5,4 @@ These projects were documented to show the knowledge and technologies required t
 + **Git**
 + **LAMP Stack**
 + **LEMP Stack**
++ **Shell Scripting**
