@@ -1,61 +1,45 @@
 # Implememting Load Balancers With Nginx
 ## Introduction
 
-What is Load Balancer?
-A load balancer is a network device or software application that efficiently distributes incoming network traffic across multiple servers. The primary purpose of a load balancer is to enhance the availability and reliability of applications by ensuring that no single server is overwhelmed with too much traffic, thus distributing the load across multiple servers.
+**What is Load Balancer?**
 
-Implementation of Load Balancers With Nginx
-Step 1: Provisioning EC2 Instances We will provision 3 EC2 instance, two of these will be our webserver and one will be a load balancer
+A **load balancer** is a network device or software application that efficiently distributes incoming network traffic across multiple servers. The primary purpose of a load balancer is to enhance the availability and reliability of applications by ensuring that no single server is overwhelmed with too much traffic, thus distributing the load across multiple servers.
 
-i. Launch 2 EC2 instances and name each "webserver_1" and "webserver_2"
+![load balancer](<Images/load balancer.png>)
 
-ii. Launch another EC2 instance and name it "load balancer"
+## Setting up a Basic Load Balancer
 
-Step 2: Open New Security Group For Both Webservers and load balancer
+### Provisioning EC2 Instance
 
-i. For the webservers and load balancer, go to the security groups
++ Launch 2 **EC2** instances and name them **"webserver_1"** and **"webserver_2"**.
 
-ii Edit inbound rules on open port 8000 for our both webserver_1 and webserver_2 and port 80 for our load balancer!
++ Launch another **EC2** instance and name it **"load balancer"**.
 
-alt text
++ Under security, click on security groups and edit inbound rules. Open port 8000 for both webservers and port 80 for the load balancer. Allow traffic from anywhere on the open ports.
 
-iii. Allow traffic from anywhere on the open ports
++ Connect 2 terminals to webserver_1 and webserver_2
 
-Step 3: Install Apache Webserver i. Open 2 termianls and ssh into webserver_1 and webserver_2
++ Install Apache on both webservers 
 
-ii. Update and upgrade package lists
+`sudo apt update -y &&  sudo apt install apache2 -y`
 
-sudo apt update -y && sudo apt upgrade -y
-iii. Install Apache
++ Verify that Apache has been successfully installed
 
-sudo apt install apache2 -y
+`sudo systemctl status apache2`
 
-iv. Confirm Apache has been successfully installed
++ Configure Apache to Port 8000
 
-sudo systemctl status apache2
+`sudo nano /etc/apache2/ports.conf`
 
-Step 4: Configure Apache to Port 8000
+`sudo nano /etc/apache2/sites-available/000-default.conf`
 
-By default, apache listen on port 80. Since our load balancer will also be listening on port 80, we need to make our webservers listen on port 8000
++ Reload Apache
 
-i. Edit port.conf file
+`sudo systemctl reload apache2`
 
-sudo nano /etc/apache2/ports.conf
-ii. Add a new listen directive
++ Open a new index.html file
 
-iii. Add a new virtualhost statement since a new listen directive has been added
-
-sudo nano /etc/apache2/sites-available/000-default.conf
-
-iv. Reload Apache
-
-sudo systemctl reload apache2
-
-Step 5: Configure Apache to Show Names Of Both Webservers
-
-i. open a new index.html file
-
-sudo nano index.html
+`sudo nano index.html
 ii. switch to nano editor and past the html file
 
 iii. Change file ownership of index.html file
