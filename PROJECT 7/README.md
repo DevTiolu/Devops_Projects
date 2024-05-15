@@ -108,7 +108,7 @@ A **load balancer** is a network device or software application that efficiently
 
 + Open Nginx configuration file
 
-`sudo nano /etc/nginx/conf.d/loadbalancer.conf`
+`sudo vi /etc/nginx/conf.d/loadbalancer.conf`
 
 + Paste the configuration file below to configure nginx to act like a load balancer.  
 
@@ -137,6 +137,8 @@ Ensure you edit the file and provide necessary information like your server IP a
         }
     
 ```
+
+![edit nginx conf](<Images/edit nginx conf.png>)
 
 + Test if nginx configuration is correct
 
