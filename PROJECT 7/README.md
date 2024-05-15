@@ -19,87 +19,136 @@ A **load balancer** is a network device or software application that efficiently
 
 + Connect 2 terminals to webserver_1 and webserver_2
 
-+ Install Apache on both webservers 
+### Installing Apache on both webservers 
+
++ Install apache
 
 `sudo apt update -y &&  sudo apt install apache2 -y`
+
+![install apache](<Images/install apache.png>)
 
 + Verify that Apache has been successfully installed
 
 `sudo systemctl status apache2`
 
-+ Configure Apache to Port 8000
+![apache status](<Images/apache status.png>)
 
-`sudo nano /etc/apache2/ports.conf`
+### Configure Apache to a server showing its Public IP
 
-`sudo nano /etc/apache2/sites-available/000-default.conf`
++ Open the file using a text editor
 
-+ Reload Apache
+`sudo vi /etc/apache2/ports.conf`
 
-`sudo systemctl reload apache2`
++ Add a new listen directive for port 8000
+
+![port 8000](<Images/to port 8000.png>)
+
++ Open the file /etc/apache2/sites-available/000-default.conf and change port 80 on the virtualhost to 8000
+
+`sudo vi /etc/apache2/sites-available/000-default.conf`
+
+![change port to 8000](<Images/change port.png>)
+
++ Restart apache to load the new configuration
+
+`sudo systemctl restart apache2`
+
+![restart apache](<Images/restart apache.png>)
 
 + Open a new index.html file
 
-`sudo nano index.html
-ii. switch to nano editor and past the html file
+`sudo vi index.html`
 
-iii. Change file ownership of index.html file
++ Switch vi editor to insert mode and paste the following html file. Use the public IP of your EC2 instance.
+```
 
-sudo chown www-data:www-data ./index.html
-iv. Overriding the default html file of Apache Webserver
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>My EC2 Instance</title>
+        </head>
+        <body>
+            <h1>Welcome to my EC2 instance</h1>
+            <p>Public IP: YOUR_PUBLIC_IP</p>
+        </body>
+        </html>
+```
 
-sudo cp -f ./index.html /var/www/html/index.html
-v. Restart the webserver to load the new configuration
+![EC2 public IP](<Images/EC2 public IP.png>)
 
-sudo systemctl restart apache2
-Note: This step should be done for both webserver1 and webserver 2
++ Change file ownership of index.html file
 
-Step 6: Install and Configure Nginx As A Load Balancer For Both WebServers
+`sudo chown www-data:www-data ./index.html`
 
-In the step, we will configure nginx as a load balancer for webserver 1 and 2
++ Override the default html file of Apache Webserver
 
-On our load balancer instance;
+`sudo cp -f ./index.html /var/www/html/index.html`
 
-i. Update package lists and instal nginx
++ Restart the webservers to load the new configuration
 
-sudo apt update -y && sudo apt install nginx -y
-ii. Verify that Nginx is successfully installed
+`sudo systemctl restart apache2`
 
-sudo systemctl status nginx
+![sudo chown](<Images/restart apache 2.png>)
 
-iii. Edit Nginx load balancer configuration file
+![welcome to Ec2 instance](<Images/Welcome to EC2 instance.png>)
 
-sudo nano /etc/nginx/conf.d/loadbalancer.conf
-iv. Paste the configuration file below to configure nginx to act like a load balancer. A screenshot of an example config file is shown below: Make sure you edit the file and provide necessary information like your server IP address etc.
+### Install and Configure Nginx as a Load Balancer for the WebServers
 
-upstream backend_servers {
++ Update package lists and install nginx
 
-    # your are to replace the public IP and Port to that of your webservers
-    server 3.128.168.233:8000; # public IP and port for webserser 1
-    server 18.118.144.126:8000; # public IP and port for webserver 2
+`sudo apt update -y && sudo apt install nginx -y`
 
-}
+![nginx install](<Images/nginx install.png>)
 
-server {
-    listen 80;
-    server_name 3.143.235.90; # provide your load balancers public IP address
++ Verify that Nginx is successfully installed
 
-    location / {
-        proxy_pass http://backend_servers;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-}
-upstream backend_servers defines a group of backend servers. The server lines inside the upstream block list the addresses and ports of your backend servers. proxy_pass inside the location block sets up the load balancing, passing the requests to the backend servers. The proxy_set_header lines pass necessary headers to the backend servers to correctly handle the requests
+`sudo systemctl status nginx`
 
-v. Test if nginx configuration is correct
+![nginx status](<Images/nginx status.png>)
 
-sudo nginx -t
++ Open Nginx configuration file
 
-alt text
+`sudo nano /etc/nginx/conf.d/loadbalancer.conf`
 
-vi. Restart nginx
++ Paste the configuration file below to configure nginx to act like a load balancer.  
 
-sudo systemctl restart nginx
-vii. Paste load balancer public Ip address on your web browser to see the content of web server 1 and 2
+Ensure you edit the file and provide necessary information like your server IP address etc.
 
+```
+        
+        upstream backend_servers {
+
+            # your are to replace the public IP and Port to that of your webservers
+            server 127.0.0.1:8000; # public IP and port for webserser 1
+            server 127.0.0.1:8000; # public IP and port for webserver 2
+
+        }
+
+        server {
+            listen 80;
+            server_name <your load balancer's public IP addres>; # provide your load balancers public IP address
+
+            location / {
+                proxy_pass http://backend_servers;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+        }
+    
+```
+
++ Test if nginx configuration is correct
+
+`sudo nginx -t`
+
+![nginx conf](<Images/nginx conf.png>)
+
++ Restart nginx
+
+`sudo systemctl restart nginx`
+
++ Paste load balancer public Ip address on your web browser to see the content of web server 1 and 2
+
+
+![final](Images/final.png)
