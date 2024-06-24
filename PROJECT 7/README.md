@@ -9,7 +9,7 @@ A **load balancer** is a network device or software application that efficiently
 
 ## Setting up a Basic Load Balancer
 
-### Provisioning EC2 Instance
+### Provisioning EC2 Instances
 
 + Launch 2 **EC2** instances and name them **"webserver_1"** and **"webserver_2"**.
 

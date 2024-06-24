@@ -57,7 +57,7 @@ Both EC2 virtual servers are located in the same local virtual network, so they 
 ```
 sudo mysql
 
-mysql> CREATE USER 'example_user' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
+mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'Password';
 ```
 
 > [!NOTE]
