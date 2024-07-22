@@ -8,23 +8,29 @@ This project demonstrates how to automate the setup and maintenance of a load ba
 Automation refers to the practice of using automated tools, processes, and workflows to streamline and accelerate the development, deployment, and operations of software applications. Automation plays a central role in DevOps practices, enabling teams to achieve faster delivery cycles, higher quality, and greater efficiency throughout the software development lifecycle.
 
 ### Importance of Automation
-***Speed and Efficiency***: Automation eliminates manual intervention in the CI/CD process, enabling rapid execution of tasks such as building, testing, and deploying software changes. Automated processes can run concurrently, in parallel, or sequentially, allowing teams to achieve faster delivery cycles and shorter time-to-market for new features and updates.
+**Speed and Efficiency**: 
+Automation eliminates manual intervention in the CI/CD process, enabling rapid execution of tasks such as building, testing, and deploying software changes. Automated processes can run concurrently, in parallel, or sequentially, allowing teams to achieve faster delivery cycles and shorter time-to-market for new features and updates.
 
-***Consistency and Reliability***: Automated CI/CD pipelines ensure that software changes are built, tested, and deployed consistently and reliably across different environments. Automation eliminates human errors and inconsistencies in the deployment process, leading to more predictable and stable releases.
+**Consistency and Reliability**: 
+Automated CI/CD pipelines ensure that software changes are built, tested, and deployed consistently and reliably across different environments. Automation eliminates human errors and inconsistencies in the deployment process, leading to more predictable and stable releases.
 
-***Scalability***: Automation enables CI/CD pipelines to scale up or down to handle varying workloads, changes in demand, or increases in development activity. Automated processes can be easily replicated, configured, and orchestrated to accommodate changes in project size, team size, or deployment complexity.
+**Scalability**: 
+Automation enables CI/CD pipelines to scale up or down to handle varying workloads, changes in demand, or increases in development activity. Automated processes can be easily replicated, configured, and orchestrated to accommodate changes in project size, team size, or deployment complexity.
 
-***Quality Assurance***: Automation facilitates the execution of comprehensive and repeatable tests as part of the CI/CD pipeline, including unit tests, integration tests, functional tests, performance tests, and security tests. Automated testing helps identify defects, regressions, and quality issues early in the development process, ensuring that software changes meet quality standards before deployment.
+**Quality Assurance**: 
+Automation facilitates the execution of comprehensive and repeatable tests as part of the CI/CD pipeline, including unit tests, integration tests, functional tests, performance tests, and security tests. Automated testing helps identify defects, regressions, and quality issues early in the development process, ensuring that software changes meet quality standards before deployment.
 
 ## Deploying And Configuring Webservers and Load Balancer
 
 ### Provisioning EC2 Instances 
 
-+ Launch 2 EC2 instances and name them **"WS_1"** and **"WS_2"** (These instances will function as our webservers).
++ Launch 2 EC2 instances and name them **webserver_1** and **webserver_2** (These instances will function as our webservers).
 
 + Edit inbound rules in security groups and open port 8000 for both webservers to allow traffic from anywhere.
 
 + Connect the instances to your terminal.
+
+![ssh into webserver](<Images/ssh into webserver from terminal.png>)
 
 ### Automating Webservers Configurartion With Shell Script
 
@@ -79,6 +85,8 @@ sudo systemctl restart apache2
 > [!NOTE]
 > Make sure to read the instructions in the shell script to know how to use it.
 
+![webserver config](<Images/webserver config.png>)
+
 + To close the file click on the `esc` key, then `shift` + `:wqa!`
 
 + Change the permissions on the file to make an executable using the command below.
@@ -87,6 +95,15 @@ sudo systemctl restart apache2
 + Run the shell script using the command 
 `./install.sh PUBLIC_IP`.
 
+![1a](<Images/run shell script 1a.png>)
+
+![1b](<Images/run shell script 1b.png>)
+
+![2a](<Images/run shell script 2a.png>)
+
+![2b](<Images/run shell script 2b.png>)
+
+
 ### Automating Load Balancers Configurartion With Shell Script
 
 + Launch an EC2 instance and name it **"load balancer"**.
@@ -94,6 +111,8 @@ sudo systemctl restart apache2
 + Edit inbound rules in security groups and open port 80 to anwhere.
 
 + Connect to the instance using **ssh**.
+
+![ssh into load balancer](<Images/ssh into load balancer from terminal.png>)
 
 + On your terminal, open a file using the command below.
 `sudo vi nginx.sh`
@@ -162,6 +181,8 @@ sudo systemctl restart nginx
 > [!NOTE]
 > Make sure to read the instructions in the shell script to know how to use it.
 
+![load balancer config](<Images/load balancer config.png>)
+
 + To close the file click on the `esc` key, then `shift` + `:wqa!`
 
 + Change the permissions on the file to make an executable using the command below.
@@ -172,10 +193,9 @@ sudo systemctl restart nginx
 
 ### Verifying the Setup
 
+![webserver 1](Images/webserver_1.png)
 
-
-
-
+![webserver 2](Images/webserver_2.png)
 
 
 
